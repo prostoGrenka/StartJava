@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TheFthirdTask {
+public class TheThirdTask {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -10,24 +10,30 @@ public class TheFthirdTask {
 
 
         while (true) {
-            System.out.println("Is the number greater than " + startNum + "?");
+            System.out.println("Have you made a wish?" + startNum + "?");
             int answerPlayer = in.nextInt();
 
             if(answerPlayer == 0) {
-                startNum = startNum / 2;
+                int i = 1;
+                while(i == 1){
+                    System.out.println("Is the number greater than " + startNum + "?");
+                    answerPlayer = in.nextInt();
+
+                    if(answerPlayer == 0) {
+                        startNum = startNum / 2;
+                    }
+                    if (answerPlayer == 1) {
+                        startNum = startNum * 3 / 2 + 1;
+                    }
+                    i--;
+                    answerPlayer = 0;
+                }
             }
             if (answerPlayer == 1) {
-                startNum = startNum * 3 / 2 + 1;
+                System.out.print("You WIN!!! Bye");
+                System.exit(0);
             }
 
-            System.out.println("Is the number equally  " + startNum + "?");
-            answerPlayer = in.nextInt();
-            if(answerPlayer == 0) {
-                System.out.println("OK  " + startNum + "?");
-            }
-            if (answerPlayer == 1) {
-                System.out.println("ЕБАТЬ " + startNum + "?");
-            }
         }
     }
 }
